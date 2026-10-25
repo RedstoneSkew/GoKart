@@ -1,0 +1,76 @@
+# ------------------------------------------------------------
+#  GoKart — race your friends in go-karts
+# ------------------------------------------------------------
+
+kart:
+  # Size of the whole kart (1.0 = normal go-kart size for the little driver).
+  scale: 1.0
+  # Size of the driver (a small copy of the player, in their skin) relative to a player.
+  driver-size: 0.35
+
+race:
+  # /kart duel — the finish line is this many blocks straight ahead of where the challenger looks.
+  length: 40.0
+  lane-gap: 1.2
+  # Extra width (each side) the finish line reaches beyond the lanes.
+  finish-width: 3.0
+  # Both players must be this close to each other to start a race.
+  max-start-distance: 30.0
+  # Kart Controller driving (blocks per tick / degrees per tick).
+  acceleration: 0.02
+  top-speed: 0.45
+  turn-speed: 6.0
+  # SPACE boost.
+  boost-speed: 0.30
+  boost-ticks: 25
+  boost-cooldown-ticks: 80
+  max-seconds: 90
+  challenge-seconds: 30
+  # Kart sounds. engine-volume is the engine hum (0 = off).
+  # kart-volume scales the boost and wall-bump sounds (1.0 = full, 0 = off).
+  engine-volume: 0.03
+  kart-volume: 0.35
+  # Chase camera: while racing your view follows behind your kart (you go into spectator
+  # mode looking through a camera; your game mode and spot come back when the race ends).
+  camera:
+    enabled: true
+    distance: 3.2
+    height: 1.6
+    pitch: 22.0
+    # How quickly the camera swings round when you turn (0.05 lazy - 1.0 locked on).
+    turn-smoothing: 0.25
+  # Racing Tires (craft 8 Rubber in a ring; Rubber = smelted sugar cane).
+  # Carrying a set when a race starts upgrades your kart.
+  tires-top-speed-bonus: 1.15
+  tires-grip-bonus: 1.35
+  # Does one set of Tires get used up each race?
+  tires-used-up: true
+
+trophy:
+  # Win a race to get a trophy cup. It upgrades every this many wins:
+  # Copper (1-4) -> Iron (5-9) -> Gold (10-14) -> Emerald (15-19)
+  # -> Diamond (20-24) -> Netherite (25-29) -> Champion (30+)
+  wins-per-upgrade: 5
+  # Size of trophies put on display.
+  display-scale: 1.0
+
+resource-pack:
+  # Sends players a tiny resource pack so trophy items look like 3D trophy cups
+  # (without it they show as the tier's ingot/gem). Players can decline it.
+  enabled: true
+  # Kick players who decline the pack?
+  required: false
+  # The plugin hosts the pack itself on this port.
+  # MineKeep only allows 2053, 2083, 2087 or 2096 — pick one no other plugin (e.g. Dynmap) uses.
+  port: 2053
+  # ---- How players download it (fill in ONE of these) ----
+  # MineKeep: just your server's name. "dominiontesting" -> https://dominiontesting.minekeep.dev:2053
+  minekeep-server-name: "dominiontesting"
+  # Any other host: the full public address of the port above, e.g. https://play.example.com:2053
+  public-base-url: ""
+  # Or only the public address/IP (http is used). Blank = server-ip from server.properties.
+  # (Minecraft refuses packs from localhost or LAN addresses, so those are never sent.)
+  public-address: ""
+  # Hosting the zip somewhere else entirely? Upload plugins/GoKart/GoKart-pack.zip and put its
+  # direct download link here; the built-in host is then turned off.
+  url: ""

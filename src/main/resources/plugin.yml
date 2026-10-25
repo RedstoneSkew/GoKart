@@ -1,0 +1,15 @@
+name: GoKart
+version: '${version}'
+main: dev.gokart.GoKartPlugin
+api-version: '26.3'
+description: By Redstoneskew. Challenge players to go-kart races. Drive with a Kart Controller, chase camera, craftable Racing Tires.
+author: Redstoneskew
+authors: [Redstoneskew]
+
+permissions:
+  gokart.use:
+    description: Challenge and race other players
+    default: true
+  gokart.admin:
+    description: Reload the config and give Rubber / Racing Tires
+    default: op
